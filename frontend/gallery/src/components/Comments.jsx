@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Comments({ id }) {
   const [review, setReview] = useState([]);
-  const [comment, setComment] = useState(" ");
+  const [comment, setComment] = useState();
   const [rating, setRating] = useState(0);
 
   function handleSubmit(e) {
@@ -19,7 +19,7 @@ function Comments({ id }) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        review,
+        comment,
         rating,
       }),
     })
@@ -35,29 +35,32 @@ function Comments({ id }) {
           <form onSubmit={handleSubmit}>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">
-                Rating
+                Comment
               </label>
               <input
-                onChange={(e) => setRating(e.target.value)}
-                value={rating}
-                type="integer"
+                onChange={(e) => setComment(e.target.value)}
+                value={comment}
+                type="text"
                 class="form-control"
               />
             </div>
             <div class="mb-3">
               <label for="exampleInputPassword1" class="form-label">
-                Comment
+                Rating
               </label>
               <input
-                value={comment}
-                onChange={(e) => setComment(e.target.value)}
-                type="text"
+                value={rating}
+                onChange={(e) => setRating(e.target.value)}
+                type="integer"
                 class="form-control"
               />
             </div>
             <input type="submit" class="btn btn-primary" />
             <Link to={`/photos/${id}/users/comment`}>
               <button class="btn btn-primary m-5">Back</button>
+            </Link>
+            <Link to={`/photos/${id}/users/comment`}>
+              <button class="btn btn-primary m-5">Update</button>
             </Link>
           </form>
         </div>

@@ -37,6 +37,7 @@
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 30px;
+    justify-content: space-between;
     /* display:inline-flex; */
   }
 
@@ -180,3 +181,15 @@
     flex-wrap: wrap;
     justify-content: space-between;
   }
+
+  .headwords {
+    color: rgb(0, 0, 0);
+    padding-right: 1pc;
+  }
+  .navlink {
+    font-size: 26px;
+    color: rgb(0, 0, 0);
+  }
+  .navlink:hover{
+    color: rgb(7, 165, 39);
+  }  

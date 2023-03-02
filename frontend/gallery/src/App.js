@@ -36,7 +36,10 @@ function App() {
     <>
       <Header />
       <Routes>
-        <Route path="/" element={<LandingPage />} />
+        <Route
+          path="/"
+          element={<LandingPage photos={photos} setPhotos={setPhotos} />}
+        />
         <Route
           path="/photos"
           element={<DisplayPhotos photos={photos} setPhotos={setPhotos} />}

@@ -6,7 +6,7 @@ function Header() {
     <div>
       <nav className="navbar navbar-expand-lg bg-light">
         <div className="container-fluid">
-          <a className="navbar-brand" href="/">
+          <a className="navbar-brand fs-1 " href="/">
             Visual Art
           </a>
           <button
@@ -21,17 +21,12 @@ function Header() {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0 headwords">
+              <li className="nav-item headwords navlink ">
                 <Link to="/">Home</Link>
               </li>
-              <li className="nav-item">
+              <li className="nav-item navlink headwords">
                 <Link to="/photos">Photos</Link>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/">
-                  Contacts
-                </a>
               </li>
             </ul>
 

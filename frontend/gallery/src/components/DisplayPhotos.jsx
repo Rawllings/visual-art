@@ -23,12 +23,12 @@ function DisplayPhotos({ photos }) {
   return (
     <div>
       <h1>Photos</h1>
-      <div className="card-container">
+      <div className="card-container mb-2 ">
         {Array.isArray(photos)
           ? photos.map((photo, index) => {
               return (
                 <div
-                  className="card upline"
+                  className="card upline row no-gutters "
                   key={index}
                   style={{ width: "18rem;" }}
                 >

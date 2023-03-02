@@ -1,7 +1,7 @@
 import React from "react";
 import DisplayPhotos from "./DisplayPhotos";
 
-function LandingPage() {
+function LandingPage({ photos, setPhotos }) {
   return (
     <div>
       <div className="landing">
@@ -20,7 +20,7 @@ function LandingPage() {
           </div>
         </div>
       </div>
-      <DisplayPhotos />
+      <DisplayPhotos photos={photos} setPhotos={setPhotos} />
     </div>
   );
 }

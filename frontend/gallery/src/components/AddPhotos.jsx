@@ -63,7 +63,7 @@ function AddPhotos({ photos, setPhotos }) {
               <input
                 value={image_url}
                 onChange={(e) => setImage_url(e.target.value)}
-                type="integer"
+                type="text"
                 class="form-control"
                 id="exampleInputPassword1"
               />

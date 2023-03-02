@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-function User() {
+function User({ id }) {
   const [user, setUser] = useState([]);
   const [name, setName] = useState();
   const [location, setLocation] = useState("");
@@ -76,7 +76,7 @@ function User() {
               />
             </div>
             <input type="submit" class="btn btn-primary btn1" />
-            <Link to={`/photos/id/user/comment`}>
+            <Link to={`/photos/${id}/user/comment`}>
               <button class="btn btn-primary m-5 btn1">Next</button>
             </Link>
           </form>
