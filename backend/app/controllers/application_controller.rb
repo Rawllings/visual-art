@@ -18,7 +18,8 @@ end
 post "/photos" do
     photo = Photo.create(
       name: params[:name],
-      price: params[:price]  
+      price: params[:price],
+      image_url: params[:image_url]  
     )
 
     {
@@ -29,8 +30,9 @@ end
 patch "/photos/:id" do
     photo = Photo.find_by(id: params[:id])
     photo.update(
-      name: params[:name],
-      price: params[:price]  
+       name: params[:name],
+      price: params[:price],
+      image_url: params[:image_url]   
     )
 
     {

@@ -3,7 +3,7 @@ import React, { useState } from "react";
 function AddPhotos({ photos, setPhotos }) {
   const [name, setName] = useState("");
   const [price, setPrice] = useState();
-  const [image_url, setImage_url] = useState("");
+  const [image_url, setImage_url] = useState();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -11,7 +11,7 @@ function AddPhotos({ photos, setPhotos }) {
 
     setName("");
     setPrice();
-    setImage_url("");
+    setImage_url();
 
     fetch("/photos", {
       method: "POST",

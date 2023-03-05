@@ -8,6 +8,8 @@ import AddPhotos from "./components/AddPhotos";
 import Footer from "./components/Footer";
 import Comments from "./components/Comments";
 import User from "./components/User";
+import Viewcomments from "./components/Viewcomments";
+import Updatecomment from "./components/Updatecomment";
 
 import React, { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
@@ -60,6 +62,18 @@ function App() {
         <Route
           path="/photos/:id/user/comment"
           element={<Comments photos={photos} setPhotos={setPhotos} id={id} />}
+        />
+        <Route
+          path="/photos/:id/user/comment/view"
+          element={
+            <Viewcomments photos={photos} setPhotos={setPhotos} id={id} />
+          }
+        />
+        <Route
+          path="/photos/:id/user/comment/view/update"
+          element={
+            <Updatecomment photos={photos} setPhotos={setPhotos} id={id} />
+          }
         />
       </Routes>
       <Footer />

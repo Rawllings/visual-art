@@ -10,7 +10,7 @@ function Header() {
             Visual Art
           </a>
           <button
-            className="navbar-toggler"
+            className="navbar-toggler clr"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
@@ -20,8 +20,11 @@ function Header() {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0 headwords">
+          <div
+            className="collapse navbar-collapse"
+            id="navbarSupportedContent text-decoration-none"
+          >
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0 headwords text-decoration-none">
               <li className="nav-item headwords navlink ">
                 <Link to="/">Home</Link>
               </li>

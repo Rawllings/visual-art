@@ -1,8 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
-function User({ id }) {
+function User() {
   const [user, setUser] = useState([]);
+  const { id } = useParams();
+
+  useEffect(() => {
+    fetch("/users")
+      .then((res) => res.json())
+      .then((data) => setUser(data));
+  }, [id]);
+
   const [name, setName] = useState();
   const [location, setLocation] = useState("");
   const [phone, setPhone] = useState("");
@@ -80,6 +89,28 @@ function User({ id }) {
               <button class="btn btn-primary m-5 btn1">Next</button>
             </Link>
           </form>
+          <section>
+            <div class="upline">
+              {Array.isArray(user)
+                ? user.map((u, index) => {
+                    return (
+                      <div
+                        class="card upline m-5"
+                        key={index}
+                        style={{ width: "18rem;" }}
+                      >
+                        <h5 class="card-header">User</h5>
+                        <div class="card-body">
+                          <p class="card-text">{u.id}</p>
+                          <p class="card-text">{u.name}</p>
+                          <p class="card-text">{u.location}</p>
+                        </div>
+                      </div>
+                    );
+                  })
+                : null}
+            </div>
+          </section>
         </div>
       </div>
     </div>

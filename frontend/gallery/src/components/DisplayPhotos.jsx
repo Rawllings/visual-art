@@ -21,8 +21,9 @@ function DisplayPhotos({ photos }) {
   }
 
   return (
-    <div>
-      <h1>Photos</h1>
+    <div className="bg">
+      <h1 className="text-center bgc">Photos</h1>
+      <hr />
       <div className="card-container mb-2 ">
         {Array.isArray(photos)
           ? photos.map((photo, index) => {
@@ -40,9 +41,10 @@ function DisplayPhotos({ photos }) {
                   <div className="card-body">
                     <h5 className="card-title">Name: {photo.name}</h5>
                     <p className="card-text">Price: {photo.price}</p>
+                    <p className="card-text">ID: {photo.id}</p>
                     <hr />
 
-                    {Array.isArray(photo.users)
+                    {/* {Array.isArray(photo.users)
                       ? photo.users.map((user, index) => {
                           return (
                             <div key={index} style={{ width: "18rem;" }}>
@@ -59,30 +61,34 @@ function DisplayPhotos({ photos }) {
                             </div>
                           );
                         })
-                      : null}
+                      : null} */}
                     <hr />
-                    <h5>Comments: {photo.reviews.length}</h5>
+                    {/* <h5>Comments: {photo.reviews.length}</h5>
                     {Array.isArray(photo.reviews)
                       ? photo.reviews.map((review, index) => {
                           return (
                             <div key={index} style={{ width: "18rem;" }}>
                               <div className="card-body">
                                 <h5 className="card-title">
+                                  <hr />
                                   Rating: {review.rating}
                                 </h5>
                               </div>
                               <div className="card-body">
                                 <h5 className="card-title">
-                                  Comment: {review.comment}
+                                  Comment:{" "}
+                                  <p className="fs-6">{review.comment}</p>
+                                  <hr />
                                 </h5>
                               </div>
                             </div>
                           );
                         })
-                      : null}
+                      : null} */}
                     <Link to={`/photos/${photo.id}`}>
                       <button className="btn btn-primary btn1">Details</button>
                     </Link>
+
                     <button
                       onClick={() => handleDelete(photo.id)}
                       className="btn btn-primary delete btn1"
